@@ -1,25 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<style>
+    .form-check-input:checked {
+        background-color: #dc3545;
+        /* Bootstrap's danger color */
+        border-color: #dc3545;
+        /* Bootstrap's danger color */
+    }
+</style>
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+            <div class="card shadow-lg border-0 rounded-lg">
+                <div class="card-header bg-danger text-white text-center">{{ __('Verify Your Email Address') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-white p-5">
                     @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ __('A fresh verification link has been sent to your email address.') }}
+                    </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    <p>{{ __('Before proceeding, please check your email for a verification link.') }}</p>
+                    <p>{{ __('If you did not receive the email') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link" style="color: red">{{ __('click here to request another') }}</button>.
                     </form>
+                    </p>
                 </div>
             </div>
         </div>

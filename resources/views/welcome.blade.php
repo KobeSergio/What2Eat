@@ -1,6 +1,21 @@
 @extends('layouts.app')
 @section('content')
 
+<style>
+    /* Hover effect styles */
+    .hover-effect {
+        transition: transform 0.3s, background-color 0.3s;
+        /* Smooth transition for transform and background-color */
+    }
+
+    .hover-effect:hover {
+        transform: scale(1.05);
+        /* Slightly scale the card on hover */
+        background-color: #f5f5f5;
+        /* Change background color on hover */
+    }
+</style>
+
 @if (count($recipes) <= 0) <div class="container d-flex justify-content-center align-items-center overflow-auto h-100">
     Add your first recipe!
     </div>
@@ -14,22 +29,32 @@
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade active show">
-                    <div class="row gy-5">
+                    <div class="row gy-4 gx-4 w-100" style="justify-content: center; "> <!-- Adjusted gaps -->
                         @foreach ($recipes as $recipe)
-                        <a href="#" class="col-lg-4 menu-item" onclick="setModalId(`{{ $recipe['id'] }}`)" data-bs-toggle="modal" data-bs-target="#u{{ $recipe['id'] }}">
-                            <img src="{{ $recipe['image'] }}" class="menu-img img-fluid rounded" alt="">
-                            <h4>{{ $recipe['title'] }}</h4>
-                            <p class="ingredients">
-                                {{ $recipe['ingredients'] }}
-                            </p>
-                            <p class="price">
-                                View recipe
-                            </p>
+                        <a href="#" style="
+    background:white; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    height: 60vh;" class="col-lg-3 menu-item card text-dark mb-3 shadow-sm pt-3 mx-4 hover-effect" onclick="setModalId(`{{ $recipe['id'] }}`)" data-bs-toggle="modal" data-bs-target="#u{{ $recipe['id'] }}">
+                            <img src="{{ $recipe['image'] }}" class="card-img-top rounded-top aspect-ratio-content" style="object-fit: cover; height:30vh;" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $recipe['title'] }}</h4>
+                                <p class="card-text ingredients">
+                                    {{ $recipe['ingredients'] }}
+                                </p>
+                            </div>
+                            <div class="card-footer" style="background:white">
+                                <p class="card-text price">
+                                    View recipe
+                                </p>
+                            </div>
                         </a>
                         @endforeach
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
