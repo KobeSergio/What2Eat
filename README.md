@@ -8,13 +8,22 @@ Welcome to our Recipe Sharing Platform! This application is my warmup project us
 - Users can explore a variety of recipes posted by other members on the index page without the need to log in.
 - Clicking on a recipe will display a modal with detailed information, including the title, ingredients, and instructions.
 
+![index](docu/index.png)
+
 ### 2. **User Authentication**
 - Users can register and log in to access additional features.
 - We've utilized Laravel's authentication scaffold and enhanced the UI for a seamless user experience.
 
+![login](docu/login.png)
+![register](docu/register.png)
+![recipe](docu/recipe.png)
+
 ### 3. **Manage Your Recipes**
 - Once logged in, users can navigate to `/recipes` to view all their posted recipes.
 - Each recipe is presented in a card UI format. Clicking on a card will open a modal with options to edit or delete the recipe.
+
+![your_recipes](docu/your_recipes.png)
+![redit](docu/recipe_edit_delete.png)
 
 ### 4. **Adding Recipes**
 - Authenticated users have the feature to post their own recipe within the site. Navigate to `/recipes/create` to view the form where the users need to fill out.
@@ -29,31 +38,25 @@ Instructions:
  `- Ipsum`
  `- Dolor`
 
+ ![Alt text](docu/post_recipe.png)
+
 
 ### 4. **Delete Recipes**
 - Users have the option to remove any of their recipes. Once deleted, the recipe is permanently removed from the database.
+
+![redit](docu/recipe_edit_delete.png)
 
 ### 5. **Edit Recipes**
 - If users wish to make changes to their recipes, they can do so by clicking the edit option in the modal.
 - This will redirect them to the editing page at `recipes/{id}`.
 - After making the desired changes, submitting the form will update the recipe details via the `recipes/edit/{id}` API endpoint.
 
-## Getting Started
+![edit](docu/edit.png)
 
-(You can add instructions here on how to set up the project locally, any prerequisites, etc.)
+## Getting Started 
+### Prerequisites
 
-## Contributing
+1. **PHP**: Ensure you have PHP installed. Laravel requires PHP >= 7.3.
+2. **Composer**: This is a tool for dependency management in PHP.
 
-(If you're open to contributions, you can add guidelines here.)
 
-## License
-
-(You can mention the type of license your project uses, if any.)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
