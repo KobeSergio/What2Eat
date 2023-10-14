@@ -36,7 +36,7 @@
     display: flex; 
     flex-direction: column; 
     justify-content: space-between; 
-    height: 60vh;" class="col-lg-3 menu-item card text-dark mb-3 shadow-sm pt-3 mx-4 hover-effect" onclick="setModalId(`{{ $recipe['id'] }}`)" data-bs-toggle="modal" data-bs-target="#u{{ $recipe['id'] }}">
+    height: 65vh;" class="col-lg-4 menu-item card text-dark mb-3 shadow-sm pt-3 mx-4 hover-effect" onclick="setModalId(`{{ $recipe['id'] }}`)" data-bs-toggle="modal" data-bs-target="#u{{ $recipe['id'] }}">
                             <img src="{{ $recipe['image'] }}" class="card-img-top rounded-top aspect-ratio-content" style="object-fit: cover; height:30vh;" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">{{ $recipe['title'] }}</h4>
