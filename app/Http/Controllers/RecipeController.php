@@ -19,6 +19,11 @@ class RecipeController extends Controller
         return view("recipes.index", ["recipes" => $recipes]);
     }
 
+    public function test()
+    {
+        //Test function for pushing to github
+    }
+
 
     public function recipe($id)
     {
