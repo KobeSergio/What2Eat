@@ -24,6 +24,12 @@ class RecipeController extends Controller
         //Test function for pushing to github
     }
 
+    public function test_2()
+    {
+        //Test function for pushing to github
+    }
+
+
 
     public function recipe($id)
     {
